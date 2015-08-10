@@ -16,5 +16,6 @@
 # \subsection{Disable location services}
 
 class location::no {
-    include "location::no::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "location::no::${lower_osfamily}"
 }
